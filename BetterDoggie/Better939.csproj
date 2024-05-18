@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>..\..\..\References\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
+      <Reference Include="CommandSystem.Core">
+        <HintPath>..\..\EXILED References\Internal\11.2\CommandSystem.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Exiled.API">
+        <HintPath>..\..\EXILED References\EXILED 5\11.2.1\EXILED\Plugins\dependencies\Exiled.API.dll</HintPath>
+      </Reference>
+      <Reference Include="Exiled.Events">
+        <HintPath>..\..\EXILED References\EXILED 5\11.2.1\EXILED\Plugins\Exiled.Events.dll</HintPath>
+      </Reference>
+      <Reference Include="Exiled.Permissions">
+        <HintPath>..\..\EXILED References\EXILED 5\11.2.1\EXILED\Plugins\Exiled.Permissions.dll</HintPath>
+      </Reference>
+      <Reference Include="Mirror">
+        <HintPath>bin\Debug\net48\Mirror.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>bin\Debug\net48\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.PhysicsModule">
+        <HintPath>..\..\..\References\UnityEngine.PhysicsModule.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="EXILED" Version="8.8.1" />
+    </ItemGroup>
+
+</Project>
