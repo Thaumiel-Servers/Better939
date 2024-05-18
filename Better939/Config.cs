@@ -1,0 +1,64 @@
+﻿namespace BetterDoggie
+{
+    using UnityEngine;
+    using System.ComponentModel;
+    using Exiled.API.Interfaces;
+    using Exiled.API.Features;
+    
+    public class Config : IConfig
+    {
+        
+        [Description("Is the plugin enabled?")]
+        public bool IsEnabled { get; set; } = true;
+        
+        [Description("Is debug mode enabled?")]
+        public bool Debug { get; set; } = true;
+
+        [Description("The max HP that SCP939 will spawn with.")]
+        public int SCP939Health { get; set; } = 1500;
+        
+        [Description("The maximum AHP SCP939 can spawn with.")]
+        public int SCP939Ahp { get; set; } = 600;
+
+        [Description("Should SCP939 get the a speed boost? (Set to 0 or less to disable)")]
+        public byte ColaSpeedBoost { get; set; } = 20;
+
+        [Description("The duration SCP939 should get slowed down when attacking.")]
+        public float SlowdownDuration { get; set; } = 1.5f;
+
+        [Description("Should the slowdown time stack for each attack the dog does? (Add X seconds to slowdown versus just resetting it to X seconds)")]
+        public bool ShouldSlowdownStack { get; set; } = true;
+
+        [Description("The size of SCP939 when it spawns.")]
+        public Vector3 SCP939Scale { get; set; } = new Vector3(1f, 1f, 1f);
+
+        [Description("The base amount of damage SCP939 will do.")]
+        public float BaseDamage { get; set; } = 40f;
+
+        [Description("The maximum amount of additional damage SCP939 can deal.")]
+        public float MaxDamageBoost { get; set; } = 75f;
+
+        [Description("Message to send to players when they spawn as SCP939.")]
+        public Broadcast SpawnBroadcast { get; set; } = new Broadcast(
+            "<color=orange>You have spawned as an <color=red>upgraded</color> SCP-939! You run <color=red>faster</color> but slow down when you attack! " +
+            "You can also bust down doors and pry gates when your Hume shield is below 50!</color>", 8);
+
+        [Description("Hint to show players to set their keybinds when they spawn.")]
+        public string KeybindHint { get; set; } = "Upgraded SCP-939s have a boost ability that <color=orange>temporarily grants the ability to break down doors.</color>" +
+            "To use this ability, you must set a <color=orange>keybind in your console (~ key) with the format: \"cmdbind <keycode> .939boost\"";
+
+        public int KeybindHintShowDuration { get; set; } = 20;
+
+        [Description("Can SCP939 bust open doors and gates if it is below a certain AHP?")]
+        public bool EnableDogDoorBusting { get; set; } = true;
+
+        [Description("The cooldown between enabling / disabling the door busting ability.")]
+        public int DoorBustingCooldown { get; set; } = 15;
+
+        [Description("Gives SCP939 a speed boost when it busts down a door.")]
+        public bool EnableBustSpeedBoost { get; set; } = true;
+
+        [Description("The speed boost SCP939 gets when it busts down a door.")]
+        public byte BustBoostAmount { get; set; } = 50;
+    }
+}
